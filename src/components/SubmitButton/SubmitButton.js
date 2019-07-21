@@ -15,7 +15,7 @@ class SubmitButton extends Component {
   render() {
 
     return (
-        <button onClick={this.handleClick}>Submit</button>
+        <button className="submitButton" onClick={this.handleClick}>Submit</button>
     )
   }
 }
