@@ -58,14 +58,21 @@ class Feelings extends Component {
                           onChange= {this.handleChangeFor}
                           value={this.state.newSubmission.feelings}>
                    </input>
-                {/* the button below will be replaced by component! 
+                {/* the button below will be replaced by NextButton component! 
                    <button className="nextButton">Next</button>     */}
                </form>
 
            </div>
-           <div className="mainReviewDiv">
+
+           {/* Pretty sure doing this would cause my routing to go haywire...
+
+                    I'm trying to have the Review component show by setting it to
+                        /:id in my Router on App.js 
+            */}
+
+           {/* <div className="mainReviewDiv">
                <Review />
-           </div>
+           </div> */}
         </>
         )
     }

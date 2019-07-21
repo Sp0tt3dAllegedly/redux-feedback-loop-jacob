@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class SubmitButton extends Component {
 
@@ -20,4 +21,4 @@ class SubmitButton extends Component {
   }
 }
 
-export default withRouter ( SubmitButton ) ;
+export default connect ()( withRouter (SubmitButton) );
