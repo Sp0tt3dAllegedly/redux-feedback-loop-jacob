@@ -10,6 +10,15 @@ import Comment from '../Comment/Comment';
 
 
 class App extends Component {
+
+
+addSubmission = (event) => {
+  event.preventDefault();
+  // console.log('new submission', this.state.newSubmission);
+  axios.post('/submit')
+}
+
+
   render() {
     return (
       <Router>
@@ -21,11 +30,15 @@ class App extends Component {
         <br/>
       </div>
     <main>
+         {/* Routes here for each component to display above review component */}
             <Route exact path='/' component ={StartFeedback}/>
             <Route path='/Feelings' component ={Feelings}/>
             <Route path='/Understanding' component ={Understanding}/>
             <Route path='/Supported' component ={Supported}/>
             <Route path='/Comment' component ={Comment}/>
+
+          {/* This last route is so that whatever renders, the review component will also render */}
+            <Route path='/:id' component ={Review} />
             
         {/* routes go here!!! */}
 
