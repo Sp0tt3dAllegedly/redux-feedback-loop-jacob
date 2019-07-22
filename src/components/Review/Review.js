@@ -8,7 +8,7 @@ class Review extends Component {
     // Establish component local state to be updated
     // with data from input components!
 state = {
-    newSubmission ={
+    newSubmission: {
         feelings:0,
         understanding:0,
         supported:0,

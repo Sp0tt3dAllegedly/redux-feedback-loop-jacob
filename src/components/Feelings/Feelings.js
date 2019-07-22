@@ -2,41 +2,30 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
 // Import Components here!
-import Review from './Review/Review.js'
+import Review from '../Review/Review.js'
 
 class Feelings extends Component {
 
         state = {
-        newSubmission = {
-            feelings:0,
-            understanding:0,
-            supported:0,
-            comments:'',
-            flagged: 'false',
-            date: ''
-            }
+            feeling: 0
         }
 
     handleChangeFor = (event) => {
 
-        let propertyToChange = event.target.feelings;
-        console.log('How Do you feel?:', propertyToChange);
-
         this.setState({
-            newSubmission ={
-                ...this.state.newSubmission,
-                [propertyToChange]: event.target.value,
-            }
+            feeling: event.target.value
+            
         })
 
         // check that state was updated by input
-        console.log(...this.state.newSubmission);
+        console.log('How are you Feeling?', this.state.feeling);
         
     } 
 
     addFeelings = (event) => {
         event.preventDefault();
-        console.log('adding feelings, and showing other feedback values', this.state.newSubmission);
+        console.log('adding feelings, and showing other feedback values', this.state.feeling);
+        this.props.history.push('/understanding')
         
     }
 
@@ -63,6 +52,10 @@ class Feelings extends Component {
                </form>
 
            </div>
+
+            {/* import review component here */}
+            <Review />
+
 
            {/* Pretty sure doing this would cause my routing to go haywire...
 

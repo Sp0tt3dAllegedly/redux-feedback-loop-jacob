@@ -5,6 +5,10 @@ import {connect} from 'react-redux';
 
 class StartFeedback extends Component {
 
+    beginFeedback = () => {
+        this.props.history.push('/feelings');
+    }
+
     render(){
         return(
             <>
@@ -12,10 +16,8 @@ class StartFeedback extends Component {
                     <h1>Please start your feedback form! :)</h1>
                     <br/>
                     <p className="startFeedbackPtag">We appreciate your input!</p>
+                    <button className="nextButton" onClick={this.beginFeedback}>Begin Your Feedback!</button>
                 </div>
-
-
-
 
 
             </>
