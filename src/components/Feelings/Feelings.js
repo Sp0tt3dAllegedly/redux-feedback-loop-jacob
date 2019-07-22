@@ -22,10 +22,12 @@ class Feelings extends Component {
         
     } 
 
+    // dispatches data of answer and check to index.js (reduxStore)
     addFeelings = (event) => {
         event.preventDefault();
      // console.log('adding feelings, and showing other feedback values', this.state.feelings);
-        this.props.dispatch({ type: 'FEELINGS_DATA', payload: this.state.feelings})
+        this.props.dispatch({ type: 'FEELINGS_DATA', payload: this.state.feelings});
+        this.props.dispatch({ type: 'FEELINGS_DONE' , payload: true});
         this.props.history.push('/understanding');
         
     }

@@ -32,14 +32,25 @@ const formReducer = (state = feedbackObject, action) => {
         state.feelings = action.payload;
       return state;
     }
+
     
 }
 
+const checkCompletedForm = ( state = completeCheck, action ) => {
+    if (action.type === 'FEELINGS_DONE'){
+        state.feelings = action.payload;
+      return state;
+    }
+
+
+}
 
 const reduxStore = createStore(
     combineReducers({
         // all reducers will get called into here...
-       
+        formReducer,
+        checkCompletedForm,
+
     }),
     applyMiddleware(logger)
 );
