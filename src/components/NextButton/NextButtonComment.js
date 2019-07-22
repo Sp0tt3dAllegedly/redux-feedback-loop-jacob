@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, HashRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class NextButtonComment extends Component {
 
-    handleClickComment = (event) => {
-
+    handleClickComment = () => {
+        alert('Headed to Review!');
+        this.props.history.push('/ReviewFeedback');
     }
 
     render() {
@@ -20,4 +21,4 @@ class NextButtonComment extends Component {
 
 
 
-export default connect() ( withRouter (NextButtonComment) );
+export default connect() ( withRouter (HashRouter) (NextButtonComment) );

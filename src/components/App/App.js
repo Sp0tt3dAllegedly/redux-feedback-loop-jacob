@@ -7,7 +7,7 @@ import Feelings from '../Feelings/Feelings';
 import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
 import Comment from '../Comment/Comment';
-
+import ReviewFeedback from '../Review/ReviewFeedback';
 
 class App extends Component {
 
@@ -36,7 +36,8 @@ addSubmission = (event) => {
             <Route path='/Understanding' component ={Understanding}/>
             <Route path='/Supported' component ={Supported}/>
             <Route path='/Comment' component ={Comment}/>
-
+            <Route path='/ReviewFeedback' compontent={ReviewFeedback} />
+            
           {/* This last route is so that whatever renders, the review component will also render */}
             <Route path='/:id' component ={Review} />
             

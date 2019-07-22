@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, HashRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class NextButtonSupported extends Component{
 
-    handleClickSupported = (event) => {
-
+    handleClickSupported = () => {
+        alert('Headed to Comment section!');
+        this.props.history.push('/Comment');
     }
 
     render() {
@@ -20,4 +21,4 @@ class NextButtonSupported extends Component{
 
 
 
-export default connect() ( withRouter (NextButtonSupported) );
+export default connect() ( withRouter (HashRouter) (NextButtonSupported) );

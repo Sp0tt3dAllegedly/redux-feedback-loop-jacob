@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, HashRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class NextButtonUnderstanding extends Component{
 
-    handleClickUnderstanding = (event) => {
-
+    handleClickUnderstanding = () => {
+        alert('Headed to Support section!');
+        this.props.history.push('/Supported');
     }
 
     render() {
@@ -20,4 +21,4 @@ class NextButtonUnderstanding extends Component{
 
 
 
-export default connect() ( withRouter (NextButtonUnderstanding) );
+export default connect() ( withRouter (HashRouter) (NextButtonUnderstanding) );
