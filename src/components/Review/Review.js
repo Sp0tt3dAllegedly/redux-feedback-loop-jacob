@@ -17,7 +17,7 @@ state = {
     }
 
     postFeedback = () => {
-        axios.post('/feedback', this.state)
+        axios.post('/submit', this.state)
         .then(response => {
             this.props.history.push('thanks');
         })
