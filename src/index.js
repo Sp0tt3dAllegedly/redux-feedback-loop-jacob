@@ -32,8 +32,11 @@ const formReducer = (state = feedbackObject, action) => {
         state.feelings = action.payload;
       return state;
     }
+    if (action.type === 'UNDERSTANDING_DATA') {
+        state.feelings = action.payload;
+        return state;
+    }
 
-    
 }
 
 const checkCompletedForm = ( state = completeCheck, action ) => {
@@ -41,7 +44,10 @@ const checkCompletedForm = ( state = completeCheck, action ) => {
         state.feelings = action.payload;
       return state;
     }
-
+    if (action.type === 'UNDERSTANDING_DONE'){
+        state.understanding = action.payload;
+      return state;
+    }
 
 }
 

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './App.css';
-import { withRouter, HashRouter as Router, Route, Link} from 'react-router-dom';
+import { HashRouter as Router, Route} from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import StartFeedback from '../StartFeedback/StartFeedback';
 import Feelings from '../Feelings/Feelings';
 import Understanding from '../Understanding/Understanding';
@@ -9,14 +10,8 @@ import Supported from '../Supported/Supported';
 import Comment from '../Comment/Comment';
 import ReviewFeedback from '../Review/ReviewFeedback';
 import Review from '../Review/Review';
+
 class App extends Component {
-
-
-addSubmission = (event) => {
-  event.preventDefault();
-  // console.log('new submission', this.state.newSubmission);
-  axios.post('/submit')
-}
 
 
   render() {
@@ -47,4 +42,4 @@ addSubmission = (event) => {
   }
 }
 
-export default withRouter() (App);
+export default connect() (App);
