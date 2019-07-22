@@ -47,6 +47,8 @@ const formReducer = (state = feedbackObject, action) => {
     return state;
 }
 
+// reducer to check true/false of feedback items
+    // to decide to display submit button
 const checkCompletedForm = ( state = completeCheck, action ) => {
     if (action.type === 'FEELINGS_DONE'){
         state.feelings = action.payload;
