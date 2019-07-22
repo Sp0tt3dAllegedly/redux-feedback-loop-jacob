@@ -52,18 +52,19 @@ const checkCompletedForm = ( state = completeCheck, action ) => {
         state.feelings = action.payload;
       return state;
     }
-    if (action.type === 'UNDERSTANDING_DONE'){
+    else if (action.type === 'UNDERSTANDING_DONE'){
         state.understanding = action.payload;
       return state;
     }
-     if (action.type === 'SUPPORT_DONE') {
+    else if (action.type === 'SUPPORT_DONE') {
          state.understanding = action.payload;
          return state;
      }
-      if (action.type === 'COMMENT_DONE') {
+    else if (action.type === 'COMMENT_DONE') {
           state.understanding = action.payload;
           return state;
       }
+          return state;
 }
 
 const reduxStore = createStore(
