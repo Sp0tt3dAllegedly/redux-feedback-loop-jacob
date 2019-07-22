@@ -7,7 +7,7 @@ class Comment extends Component{
 
 
         state = {
-            comment: 0,
+            comment: '',
         }
 
     handleChangeFor = (event, propertyToChange) => {
@@ -38,7 +38,7 @@ class Comment extends Component{
            <div className="commentComponent">
                
             {/* Input form for comment renders here, above Review component! */}
-               <form onSubmit={this.addComment(event)}>
+               <form onSubmit={(event)=> this.addComment(event)}>
                    <label>How are you feeling this week?</label>
                    <br/>
                     <p>Please input a response of a number, 1 - 5; 
@@ -46,7 +46,7 @@ class Comment extends Component{
                        4 being comfortable, and 5 being very comfortable.
                     </p>
                     <br/>
-                   <input type="number" name="comment" placeholder="1-5, Please :)"
+                   <input type="text" name="comment" placeholder="What other feedback do you have for us?"
                           onChange= {(event) => this.handleChangeFor(event, 'comment')}
                           value={this.state.comment}>
                    </input>

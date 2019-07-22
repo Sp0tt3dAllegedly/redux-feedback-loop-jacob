@@ -38,7 +38,7 @@ class Understanding extends Component{
            <div className="understandingComponent">
                
             {/* Input form for understanding renders here, above Review component! */}
-               <form onSubmit={this.addUnderstanding(event)}>
+               <form onSubmit={(event)=>this.addUnderstanding(event)}>
                    <label>How are you feeling this week?</label>
                    <br/>
                     <p>Please input a response of a number, 1 - 5; 

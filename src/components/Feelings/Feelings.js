@@ -38,7 +38,7 @@ class Feelings extends Component {
            <div className="feelingsComponent">
                
             {/* Input form for feelings renders here, above Review component! */}
-               <form onSubmit={this.addFeelings(event)}>
+               <form onSubmit={(event)=>this.addFeelings(event)}>
                    <label>How are you feeling this week?</label>
                    <br/>
                     <p>Please input a response of a number, 1 - 5; 

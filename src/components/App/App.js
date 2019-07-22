@@ -8,7 +8,6 @@ import Feelings from '../Feelings/Feelings';
 import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
 import Comment from '../Comment/Comment';
-import ReviewFeedback from '../Review/ReviewFeedback';
 import Review from '../Review/Review';
 
 class App extends Component {
@@ -31,7 +30,7 @@ class App extends Component {
             <Route path='/understanding' component ={Understanding}/>
             <Route path='/supported' component ={Supported}/>
             <Route path='/comment' component ={Comment}/>
-            <Route path='/reviewFeedback' compontent={ReviewFeedback} />
+            
 
           {/* This last route is so that whatever renders, the review component will also render */}
             <Route path='/:id' component ={Review} />

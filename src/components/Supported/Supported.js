@@ -38,7 +38,7 @@ class Supported extends Component {
            <div className="supported">
                
             {/* Input form for supported renders here, above Review component! */}
-               <form onSubmit={this.addSupported(event)}>
+               <form onSubmit={(event)=>this.addSupported(event)}>
                    <label>How are you feeling this week?</label>
                    <br/>
                     <p className ="supportedPtag">Please input a response of a number, 1 - 5; 
