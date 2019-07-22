@@ -1,31 +1,32 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
-// Import Components here!
-import Review from '../Review/Review.js'
+// Import Components here, if we were doing that...
+// import Review from '../Review/Review.js'
 
 class Feelings extends Component {
 
         state = {
-            feeling: 0
+            feelings: 0
         }
 
-    handleChangeFor = (event) => {
+    handleChangeFor = (event, propertyToChange) => {
 
         this.setState({
-            feeling: event.target.value
+            [propertyToChange]: event.target.value
             
         })
 
         // check that state was updated by input
-        console.log('How are you Feeling?', this.state.feeling);
+        console.log('How are you Feeling?', this.state.feelings);
         
     } 
 
     addFeelings = (event) => {
         event.preventDefault();
-        console.log('adding feelings, and showing other feedback values', this.state.feeling);
-        this.props.history.push('/understanding')
+     // console.log('adding feelings, and showing other feedback values', this.state.feelings);
+        this.props.dispatch({ type: 'FEELINGS_DATA', payload: this.state.feelings})
+        this.props.history.push('/understanding');
         
     }
 
@@ -35,27 +36,24 @@ class Feelings extends Component {
            <div className="feelingsComponent">
                
             {/* Input form for feelings renders here, above Review component! */}
-               <form onSubmit={this.addFeelings}>
+               <form onSubmit={this.addFeelings(event)}>
                    <label>How are you feeling this week?</label>
                    <br/>
                     <p>Please input a response of a number, 1 - 5; 
-                       1 being very stressed,
-                       5 being very confident.
+                       1 being very stressed, 2 being moderately stressed,
+                       4 being pretty confident, and 5 being very confident.
                     </p>
                     <br/>
-                   <input type="text" name="feelings" 
-                          onChange= {this.handleChangeFor}
-                          value={this.state.newSubmission.feelings}>
+                   <input type="number" name="feelings" placeholder="1-5, Please :)"
+                          onChange= {(event) => this.handleChangeFor(event, 'feelings')}
+                          value={this.state.feelings}>
                    </input>
+                   <button type="submit">Take me to the next section</button>
                 {/* the button below will be replaced by NextButton component! 
                    <button className="nextButton">Next</button>     */}
                </form>
 
            </div>
-
-            {/* import review component here */}
-            <Review />
-
 
            {/* Pretty sure doing this would cause my routing to go haywire...
 
