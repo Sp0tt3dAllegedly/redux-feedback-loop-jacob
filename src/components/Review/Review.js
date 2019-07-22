@@ -47,10 +47,10 @@ state = {
             <div>
                 <h1>Here's a list of your feedback!</h1>
                     <ol>
-                        <li>Feelings: {this.props.reduxStore.formReducer.feelings}</li>
-                        <li>Understanding: {this.props.reduxStore.formReducer.understanding}</li>
-                        <li>Support: {this.props.reduxStore.formReducer.supported}</li>
-                        <li>Comments: {this.props.reduxStore.formReducer.comment}</li>
+                        <li>Feelings: {this.props.reduxStore.formReducer.feelings.value}</li>
+                        <li>Understanding: {this.props.reduxStore.formReducer.understanding.value}</li>
+                        <li>Support: {this.props.reduxStore.formReducer.supported.value}</li>
+                        <li>Comments: {this.props.reduxStore.formReducer.comment.value}</li>
                     </ol>
                 {this.sendFeedback()}
             </div>
