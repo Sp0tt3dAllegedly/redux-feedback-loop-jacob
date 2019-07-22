@@ -36,6 +36,14 @@ const formReducer = (state = feedbackObject, action) => {
         state.feelings = action.payload;
         return state;
     }
+    if (action.type === 'SUPPORT_DATA') {
+        state.feelings = action.payload;
+        return state;
+    }
+     if (action.type === 'COMMENT_DATA') {
+         state.feelings = action.payload;
+         return state;
+     }
 
 }
 
@@ -48,7 +56,14 @@ const checkCompletedForm = ( state = completeCheck, action ) => {
         state.understanding = action.payload;
       return state;
     }
-
+     if (action.type === 'SUPPORT_DONE') {
+         state.understanding = action.payload;
+         return state;
+     }
+      if (action.type === 'COMMENT_DONE') {
+          state.understanding = action.payload;
+          return state;
+      }
 }
 
 const reduxStore = createStore(

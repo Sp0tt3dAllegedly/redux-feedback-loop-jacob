@@ -23,9 +23,9 @@ class Understanding extends Component{
     } 
 
     // dispatches data of answer and check to index.js (reduxStore)
-    addFeelings = (event) => {
+    addUnderstanding = (event) => {
         event.preventDefault();
-     // console.log('adding feelings, and showing other feedback values', this.state.feelings);
+     // console.log('adding understanding, and showing other feedback values', this.state.understanding);
         this.props.dispatch({ type: 'UNDERSTANDING_DATA', payload: this.state.understanding});
         this.props.dispatch({ type: 'UNDERSTANDING_DONE' , payload: true});
         this.props.history.push('/supported');
@@ -37,7 +37,7 @@ class Understanding extends Component{
         <>
            <div className="understandingComponent">
                
-            {/* Input form for feelings renders here, above Review component! */}
+            {/* Input form for understanding renders here, above Review component! */}
                <form onSubmit={this.addUnderstanding(event)}>
                    <label>How are you feeling this week?</label>
                    <br/>
