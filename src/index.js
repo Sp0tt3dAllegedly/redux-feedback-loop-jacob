@@ -59,11 +59,11 @@ const checkCompletedForm = ( state = completeCheck, action ) => {
       return state;
     }
     else if (action.type === 'SUPPORT_DONE') {
-         state.understanding = action.payload;
+         state.support = action.payload;
          return state;
      }
     else if (action.type === 'COMMENT_DONE') {
-          state.understanding = action.payload;
+          state.comment = action.payload;
           return state;
       }
           return state;

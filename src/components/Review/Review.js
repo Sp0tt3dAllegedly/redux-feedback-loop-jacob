@@ -7,7 +7,9 @@ class Review extends Component {
 
     // Establish component local state to be updated
     // with data from input components!
-    
+  
+    // Don't do this... use componentWillUpdate instead
+    //this will only work once!!!
 state = {
     feeling: this.props.reduxStore.formReducer.feelings,
     understanding: this.props.reduxStore.formReducer.understanding,
